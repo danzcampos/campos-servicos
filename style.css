@@ -1,0 +1,642 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Adicionando a fonte Leoscar */
+@font-face {
+    font-family: 'VujahdayScript';
+    src: url('fonts/VujahdayScript-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Aplicando a fonte Leoscar para todo o site */
+body {
+    font-family: 'Leoscar', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Navbar centralizada com blur */
+.barra-navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.barra-navegacao .logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.links-navegacao {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.links-navegacao li {
+    display: inline;
+}
+
+.links-navegacao a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.links-navegacao a:hover {
+    color: #9AEBA3;
+}
+
+/* Estilo do header */
+header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.imagem-fundo {
+    background-image: url('imagens/pintura fundo.jpg'); /* Caminho da imagem */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* Ajuste a sobreposição para garantir que ela funcione com a nova imagem */
+.sobreposicao {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 27, 36, 0.5);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+}
+
+/* Estilos gerais para .texto-hero */
+.texto-hero {
+    font-family: 'VujahdayScript', sans-serif;
+    font-size: 6.3rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.2; /* Ajuste do espaçamento entre linhas */
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Degradê aplicado apenas ao span dentro do .texto-hero */
+.texto-hero .degrade {
+    background: linear-gradient(90deg, #45C4B0, #9AEBA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+.subtexto-hero {
+    font-size: 1rem;
+    color: #fffffff1; /* Cor de fallback para navegadores que não suportam */
+    margin-bottom: 50px;
+    line-height: 1.4; /* Ajuste do espaçamento entre linhas */
+    
+}
+
+
+
+
+
+.botoes-cta {
+    display: flex;
+    gap: 20px;
+}
+
+.botao {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Estilo para o botão WhatsApp */
+.cta-whatsapp {
+    background-color: #25D366;
+    color: #fff;
+    border: 1px solid #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-whatsapp:hover {
+    background-color: #1ebe57;
+    transform: scale(1.05);
+}
+
+/* Estilo para o botão Solicitar Serviço */
+.cta-servico {
+    background-color: #13678A;
+    color: #fff;
+    border: 1px solid #13678A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-servico:hover {
+    background-color: #0f526e;
+    transform: scale(1.05);
+}
+
+/* Animação para efeito */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Seção de Serviços */
+.servicos {
+    padding: 60px 20px;
+    background-color: #012030;
+    color: #fff;
+    text-align: center;
+}
+
+.servicos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #DAFDBA;
+}
+
+.servicos p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #9AEBA3;
+}
+
+.cartoes-servico {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cartao-servico {
+    background-color: #13678A;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.cartao-servico:hover {
+    transform: scale(1.05);
+    background-color: #45C4B0;
+}
+
+.cartao-servico img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.cartao-servico.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Seção Sobre Nós */
+.sobre-nos {
+    padding: 60px 20px;
+    background-color: #012030;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-sobre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    gap: 40px;
+}
+
+.texto-sobre {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: perspective(500px) rotateY(-3deg);
+    opacity: 0;
+    animation: fadeInText 1.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.texto-sobre h2 {
+    font-size: 2.5rem;
+    color: #DAFDBA;
+    margin-bottom: 20px;
+}
+
+.texto-sobre p {
+    font-size: 1.2rem;
+    color: #9AEBA3;
+    line-height: 1.6;
+}
+
+.autor {
+    font-size: 1rem;
+    color: #DAFDBA;
+    margin-top: 10px;
+}
+
+.imagem-sobre {
+    flex: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.imagem-sobre img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Animação de aparecimento gradual */
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Seção Depoimentos */
+.depoimentos {
+    padding: 60px 20px;
+    background-color: #13678A;
+    color: #fff;
+    text-align: center;
+}
+
+.titulo-secao {
+    font-size: 2.5rem;
+    color: #DAFDBA;
+    margin-bottom: 20px;
+}
+
+.descricao-secao {
+    font-size: 1.2rem;
+    color: #9AEBA3;
+    margin-bottom: 40px;
+}
+
+.container-depoimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.depoimento {
+    background-color: #012030;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.depoimento img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.depoimento blockquote {
+    font-size: 1rem;
+    color: #9AEBA3;
+    line-height: 1.4;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.autor-depoimento {
+    font-size: 0.9rem;
+    color: #DAFDBA;
+    margin-top: 10px;
+}
+
+/* Efeito de hover nos depoimentos */
+.depoimento:hover {
+    transform: scale(1.05);
+    background-color: #45C4B0;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .barra-navegacao {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .links-navegacao {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container-sobre {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .texto-sobre {
+        transform: none;
+        text-align: center;
+    }
+
+    .imagem-sobre {
+        width: 100%;
+    }
+
+    .texto-sobre h2 {
+        font-size: 2rem;
+    }
+
+    .texto-sobre p {
+        font-size: 1rem;
+    }
+
+    .titulo-secao {
+        font-size: 2rem;
+    }
+
+    .descricao-secao {
+        font-size: 1rem;
+    }
+
+    .depoimento blockquote {
+        font-size: 0.9rem;
+    }
+
+    .autor-depoimento {
+        font-size: 0.8rem;
+    }
+}
+/* Seção Contatos */
+.contatos {
+    padding: 60px 20px;
+    background-color: #012030;
+    color: #fff;
+    text-align: center;
+}
+
+.titulo-secao {
+    font-size: 2.5rem;
+    color: #DAFDBA;
+    margin-bottom: 20px;
+}
+
+.descricao-secao {
+    font-size: 1.2rem;
+    color: #9AEBA3;
+    margin-bottom: 40px;
+}
+
+.container-contatos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-contato, .formulario-contato {
+    flex: 1;
+    background-color: #13678A;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detalhes-contato p, .info-contato p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #DAFDBA;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: #DAFDBA;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #DAFDBA;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #012030;
+    font-size: 1rem;
+}
+
+.botao-enviar {
+    background-color: #45C4B0;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.botao-enviar:hover {
+    background-color: #9AEBA3;
+    transform: scale(1.05);
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .container-contatos {
+        flex-direction: column;
+    }
+
+    .info-contato, .formulario-contato {
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos para o Rodapé */
+.rodape {
+    background-color: #012030;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 3px solid #13678A;
+}
+
+.container-rodape {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #13678A;
+}
+
+.sobre-empresa, .links-uteis, .redes-sociais-rodape {
+    flex: 1;
+}
+
+.sobre-empresa h3, .links-uteis h3, .redes-sociais-rodape h3 {
+    font-size: 1.8rem;
+    color: #DAFDBA;
+    margin-bottom: 15px;
+}
+
+.sobre-empresa p {
+    font-size: 1rem;
+    color: #9AEBA3;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.links-uteis ul {
+    list-style: none;
+    padding: 0;
+}
+
+.links-uteis li {
+    margin-bottom: 10px;
+}
+
+.links-uteis a {
+    text-decoration: none;
+    color: #9AEBA3;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.3s, background-color 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.links-uteis a:hover {
+    color: #012030;
+    background-color: #9AEBA3;
+    transform: scale(1.05);
+}
+
+.icones-redes-sociais {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.icones-redes-sociais a img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s;
+    filter: grayscale(100%);
+}
+
+.icones-redes-sociais a img:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+}
+
+.creditos {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #9AEBA3;
+    opacity: 0.8;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .container-rodape {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .sobre-empresa, .links-uteis, .redes-sociais-rodape {
+        margin-bottom: 20px;
+    }
+
+    .icones-redes-sociais {
+        justify-content: center; /* Centraliza no mobile também */
+    }
+}
